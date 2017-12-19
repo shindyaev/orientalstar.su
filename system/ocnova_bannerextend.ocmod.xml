@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>Banner Extend</name>
+	<code>bannerextend</code>
+	<version>1.0</version>
+	<author>pasha.strus@gmail.com</author>
+	<link>http://ocnova.pro</link>
+
+	<file path="admin/controller/common/menu.php">
+		<operation>
+			<search ><![CDATA[
+				$data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');
+			]]></search>
+			<add position="after"><![CDATA[
+			    //added
+				$data['banner_extend'] = $this->url->link('design/banner_extend', 'token=' . $this->session->data['token'], 'SSL');
+				$data['text_banner_extend'] = $this->language->get('text_banner_extend');
+				//added
+			]]></add>
+		</operation>
+	</file>
+
+	<file path="admin/language/english/common/menu.php">
+		<operation>
+			<search ><![CDATA[
+				<?php
+			]]></search>
+			<add position="after"><![CDATA[
+			    //added
+                    $_['text_banner_extend']                 = 'Banners (extend)';
+				//added
+			]]></add>
+		</operation>
+	</file>
+
+	<file path="admin/language/russian/common/menu.php">
+		<operation>
+			<search ><![CDATA[
+				<?php
+			]]></search>
+			<add position="after"><![CDATA[
+			    //added
+                    $_['text_banner_extend']                 = 'Баннеры (расширеные)';
+				//added
+			]]></add>
+		</operation>
+	</file>
+
+	<file path="admin/view/template/common/menu.tpl">
+		<operation>
+			<search ><![CDATA[
+				<li><a href="<?php echo $banner; ?>"><?php echo $text_banner; ?></a></li>
+			]]></search>
+			<add position="after"><![CDATA[
+			    <!--//added-->
+                        <li><a href="<?php echo $banner_extend; ?>"><?php echo $text_banner_extend; ?></a></li>
+				<!--//added-->
+			]]></add>
+		</operation>
+	</file>
+
+
+</modification>

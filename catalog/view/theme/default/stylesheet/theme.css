@@ -1,0 +1,80 @@
+#top {
+    color: #777777;
+    background-color: #EEEEEE;
+    text-align: center;
+    padding: 14px 0;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    z-index: 100;
+}
+#top a, #top .btn-link {
+	color: #54108a;
+}
+header {
+	margin-top: 48px;
+	background: transparent url('../img/top-bg.jpg') no-repeat center center;
+}
+header .container {
+	background: none;
+}
+header .logo {
+	margin-top: -25px;
+}
+
+.product-thumb {
+	height: 410px;
+}
+.product-thumb .caption {
+	min-height: 92px;
+}
+#top #logo {
+	margin-top: -15px;
+}
+#top #logo img {
+	max-height: 49px;
+}
+.quickmodal-mask {
+	z-index:10000;
+}
+.mini-cart {
+	background-color: rgba(255,255,255,0.8); 
+}
+.product-controls {
+	background: none;
+	border: none;
+}
+.postInfo {
+	position: absolute;
+	bottom: 15px;
+	left: 35px;
+	right: 35px;
+	padding: 0;
+	color: #fff;
+	line-height: 1;
+	opacity: 0;
+	transition: all 0.3s ease-in;
+}
+.postInfoBlock {
+	border: 1px solid #eee;
+}
+.postInfo h5 {
+	font-size: 19px;
+	font-weight: 700;
+	margin: 0;
+	line-height: 1.2;
+}
+.postInfoBlock:hover .postInfo {
+	opacity: 1;
+	bottom: 20px;
+}
+.alert {
+	position: fixed;
+	z-index: 10000;
+	left: 0;
+	right: 0;
+	top: 0;
+	text-align: center;
+	padding: 15px 30px;
+}

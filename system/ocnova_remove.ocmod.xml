@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>remover</name>
+    <code>remover</code>
+    <version>1.0</version>
+    <author>pasha_st</author>
+    <link>http://ocnova.pro</link>
+    <file path="admin/view/template/common/dashboard.tpl">
+        <operation>
+            <search>
+                <![CDATA[<div class="col-lg-6 col-md-12 col-sx-12 col-sm-12"><?php echo $map; ?></div>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[<div class="col-lg-6 col-md-12 col-sm-12 col-sx-12"> <?php echo $recent; ?> </div>]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<div class="col-lg-4 col-md-12 col-sm-12 col-sx-12"><?php echo $activity; ?></div>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[ ]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<div class="col-lg-8 col-md-12 col-sm-12 col-sx-12"> <?php echo $recent; ?> </div>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[ ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/view/template/sale/order_list.tpl">
+        <operation>
+            <search>
+                <![CDATA[<td class="text-right"><a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a> <a href="<?php echo $order['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" id="button-edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[<td class="text-right"><a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/view/template/catalog/product_form.tpl">
+        <operation>
+            <search>
+                <![CDATA[<li><a href="#tab-recurring" data-toggle="tab"><?php echo $tab_recurring; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<label class="col-sm-2 control-label" for="input-tax-class"><?php echo $entry_tax_class; ?></label>]]>
+            </search>
+            <add position="before" offset="1">
+                <![CDATA[<!--]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<label class="col-sm-2 control-label" for="input-quantity"><?php echo $entry_quantity; ?></label>]]>
+            </search>
+            <add position="before" offset="1">
+                <![CDATA[--><input type="hidden" name="tax_class_id" value="0" />]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/view/template/common/menu.tpl">
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $recurring; ?>"><?php echo $text_recurring; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $fraud; ?>"><?php echo $text_fraud; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $order_recurring; ?>"><?php echo $text_order_recurring; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $report_sale_return; ?>"><?php echo $text_report_sale_return; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $report_customer_credit; ?>"><?php echo $text_report_customer_credit; ?></a></li>]]>
+            </search>
+            <add position="replace">
+                <![CDATA[]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $order_status; ?>"><?php echo $text_order_status; ?></a></li>]]>
+            </search>
+            <add position="after">
+                <![CDATA[<!--]]>
+            </add>
+        </operation>
+        <operation>
+            <search>
+                <![CDATA[<li><a href="<?php echo $country; ?>"><?php echo $text_country; ?></a></li>]]>
+            </search>
+            <add position="before">
+                <![CDATA[-->]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/controller/setting/setting.php">
+        <operation>
+            <search trim="true"><![CDATA[
+				$this->error['address'][$language_id] = $this->language->get('error_address');
+			]]></search>
+            <add position="replace"><![CDATA[//removed]]></add>
+        </operation>
+    </file>
+</modification>
+<!--
+скрыты в админке:
+    рассрочка
+    возвраты
+    налоги
+    фрауд
+    геозоны
+    карта мира в панели управления
+    активность в панели управления
+очищены таблицы в бд:
+    `oc_tax_class`
+    `oc_tax_rate`
+    `oc_tax_rate_to_customer_group`
+    `oc_tax_rule`
+    `oc_zone_to_geo_zone`
+    `oc_geo_zone`
+другое:
+    поле адрес магазина не обязательно к заполнению
+-->

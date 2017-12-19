@@ -1,0 +1,5 @@
+/_install
+.DS_Store
+/admin/config.php
+config.php
+/system/storage
