@@ -17,7 +17,7 @@
         <div class="row">
 			<?php foreach ($informations as $information) { ?>
                     <div class="col-lg-4 col-sm-4 col-xs-12 postInfoBlock">
-                        <a class="thumbnail" href="<?php echo $information['href']; ?>"><img src="<?php echo $information['thumb']; ?>" alt="<?php echo $information['name']; ?>" title="<?php echo $information['name']; ?>" class="img-responsive" /></a>
+                <a class="thumbnail" href="<?php echo $information['href']; ?>"><img src="<?php echo $information['thumb']; ?>" alt="<?php echo $information['name']; ?>" title="<?php echo $information['name']; ?>" class="img-responsive" /></a>
                         <div class="postInfo">
 	                        <div class="h5"><a href="<?php echo $information['href']; ?>"><?php echo $information['name']; ?></a></div>
 	                        <?php if ($information['date']) { ?>

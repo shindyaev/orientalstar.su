@@ -28,9 +28,9 @@ class ControllerInformationInformationCategory extends Controller {
         foreach($category_informations as $result) {
 
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'],  190, 190);
+                $image = $this->model_tool_image->resize($result['image'],  390, 212);
             } else {
-                $image = $this->model_tool_image->resize('placeholder.png',  190, 190);
+                $image = $this->model_tool_image->resize('placeholder.png',  390, 212);
             }
 
             if ($result['short_description']) {

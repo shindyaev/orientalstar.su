@@ -57,17 +57,24 @@ header .logo {
 	transition: all 0.3s ease-in;
 }
 .postInfoBlock {
-	border: 1px solid #eee;
+	
 }
-.postInfo h5 {
-	font-size: 19px;
+.postInfo .h5>a {
+	color: #fff;
+}
+.postInfoBlock:hover .postInfo .h5>a {
+	color: #fff;
+	text-decoration: none;
+}
+.postInfo .h5 {
+	font-size: 24px;
 	font-weight: 700;
 	margin: 0;
 	line-height: 1.2;
 }
 .postInfoBlock:hover .postInfo {
 	opacity: 1;
-	bottom: 20px;
+	bottom: 40px;
 }
 .alert {
 	position: fixed;
